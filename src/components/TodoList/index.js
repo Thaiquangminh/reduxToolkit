@@ -1,9 +1,8 @@
-import { Col, Row, Input, Button, Select, Tag } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
-import { addTodo } from '../../redux/actions';
-import Todo from '../Todo';
+import { Button, Col, Input, Row, Select, Tag } from 'antd';
 import { useId, useState } from 'react';
-import { todolistSelector, newTodolist } from '../../redux/selector';
+import { useDispatch, useSelector } from 'react-redux';
+import { newTodolist } from '../../redux/selector';
+import Todo from '../Todo';
 import todolistSlice from './todoSlice';
 
 export default function TodoList() {
@@ -14,7 +13,6 @@ export default function TodoList() {
 
   // selector
   const todoList = useSelector(newTodolist);
-  // const searchValue = useSelector((state) => state.filters.search);
 
   const handleGetName = (e) => {
     setName(e.target.value);

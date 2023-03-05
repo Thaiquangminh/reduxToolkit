@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { toggleStatus } from '../../redux/actions';
 
 export default createSlice({
   name: 'todolist',
@@ -13,7 +12,7 @@ export default createSlice({
     {
       id: 2,
       name: 'Learn redux',
-      completed: true,
+      completed: false,
       priority: 'High',
     },
     {
@@ -27,6 +26,10 @@ export default createSlice({
     addTodo: (state, action) => {
       state.push(action.payload);
     },
-    toggleStatus: () => {},
+    // toggleStatus: (state, action) => {
+    //   state.id === action.payload
+    //     ? (state.completed = true)
+    //     : (state.completed = false);
+    // },
   },
 });
